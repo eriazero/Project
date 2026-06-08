@@ -1,7 +1,6 @@
 /**
  * Event Manager
  * Centralized event emitter for real-time updates and component synchronization
- * Uses pub/sub pattern for loose coupling between modules
  */
 
 const EventManager = {
@@ -9,9 +8,6 @@ const EventManager = {
 
     /**
      * Subscribe to an event
-     * @param {string} event - Event name (e.g., 'tasks:created', 'projects:updated')
-     * @param {function} callback - Function to execute when event fires
-     * @returns {function} Unsubscribe function
      */
     on(event, callback) {
         if (!this.events[event]) {
@@ -41,8 +37,6 @@ const EventManager = {
 
     /**
      * Emit an event
-     * @param {string} event - Event name
-     * @param {*} data - Data to pass to listeners
      */
     emit(event, data) {
         if (!this.events[event]) return;
