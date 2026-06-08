@@ -386,6 +386,6 @@ const Database = {
 };
 
 // Initialize on load
-Document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     Database.init();
 });

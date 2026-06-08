@@ -150,3 +150,9 @@ function renderDashboard() {
     `;
 
 }
+function updateDashboard() {
+    const container = document.getElementById('dashboard-page');
+    if (container && container.querySelector('.dashboard-page')) {
+        container.innerHTML = renderDashboard();
+    }
+}
