@@ -88,3 +88,11 @@ const NotificationManager = {
         return container;
     }
 };
+
+// Alias for legacy/alternative callers
+NotificationManager.show = function(message, type = 'info', duration = 3000) {
+    if (type === 'success') return NotificationManager.success(message, duration);
+    if (type === 'error')   return NotificationManager.error(message, duration);
+    if (type === 'warning') return NotificationManager.warning(message, duration);
+    return NotificationManager.info(message, duration);
+};
